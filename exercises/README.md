@@ -1,5 +1,5 @@
 #Solutions
-####Source code missing the comment "// I AM NOT DONE" is a completed solution
+Source code missing the comment "// I AM NOT DONE" is a completed solution
 
 # Exercise to Book Chapter mapping
 
