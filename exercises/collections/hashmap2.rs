@@ -12,7 +12,6 @@
 // Execute the command `rustlings hint hashmap2` if you need
 // hints.
 
-// I AM NOT DONE
 
 use std::collections::HashMap;
 
@@ -38,6 +37,28 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Put new fruits if not already present. Note that you
         // are not allowed to put any type of fruit that's already
         // present!
+
+        //Verbose way to check if HashMap contains a type of fruit.
+        // let has_fruit = basket.get(&fruit);
+        // if has_fruit == Option::None {
+        //     basket.insert(fruit, 0);
+        // }
+
+        //"If Let" is syntactic sugar used to stream line pattern matching
+        if let Option::None = basket.get(&fruit) {
+            basket.insert(fruit, 0);
+        }
+    }
+
+    let count = basket.values().sum::<u32>();
+
+    for (k, v) in basket {
+        if count <= 11 {
+            match k {
+                 Fruit::Banana | Fruit::Pineapple => *v += 1 ,
+                _ => (), //Using "()" is the same as using "continue".
+            }
+        }
     }
 }
 
@@ -76,6 +97,7 @@ mod tests {
         let mut basket = get_fruit_basket();
         fruit_basket(&mut basket);
         let count = basket.values().sum::<u32>();
+        println!("Count: {}", count);
         assert!(count > 11);
     }
 }
