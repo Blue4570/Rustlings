@@ -31,7 +31,7 @@ fn main() {
     let mut joinhandles = Vec::new();
 
     for offset in 0..8 {
-        let child_numbers = Arc::clone(&shared_numbers);// Using the clone method on Arc Smart Pointer to clone a pointer (reference) from an existing reference-counter pointer
+        let child_numbers = Arc::clone(&shared_numbers);// Using the clone method on Arc Smart Pointer to clone a pointer (reference) from an existing reference-counted pointer
         joinhandles.push(thread::spawn(move || {
             let mut i = offset;
             let mut sum = 0;
