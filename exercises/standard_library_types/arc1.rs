@@ -33,7 +33,7 @@ fn main() {
         joinhandles.push(thread::spawn(move || {
             let mut i = offset;
             let mut sum = 0;
-            let mut arr = child_numbers.lock().unwrap(); //Locking the mutex to avoid other threads from being able to write to the Vector
+            let arr = child_numbers.lock().unwrap(); //Locking the mutex to avoid other threads from being able to write to the Vector
             while i < arr.len() {
                 sum += arr[i];
                 i += 8;
