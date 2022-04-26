@@ -11,11 +11,13 @@ pub fn factorial(num: u64) -> u64 {
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
 
+    //Solutions and comments for each solution documented below
+
     //Using std::iter:Iterator::fold
     //Created a range slice using (1..=num)
     //fold takes an initial value for an accumulator param,  and a closure that takes two params.
     //The first param is an accumulator which I have named acc, and 1 gets passed to the acc param on the first iteration
-    //'v' is the element from the slice that gets passed on each iteration. So on the first iteration v= 1, second iteration v =2, and so on. 
+    //'v' is the element from the slice that gets passed on each iteration. So on the first iteration v= 1, second iteration v =2, and so on.
     //Refer to the std lib documentation for more details: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.fold
     //(1..=num).fold(1, |acc, v| acc * v)
 
